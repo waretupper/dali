@@ -3,8 +3,11 @@ data_dir=$repo/dataset/
 
 # combine unaligned monolingual data in both languages
 echo "combine monolingual data"
-cat ${data_dir}/*-train.tc.clean.en.mono > ${data_dir}/all-train.tc.clean.mono.en
-cat ${data_dir}/*-train.tc.clean.de.mono > ${data_dir}/all-train.tc.clean.mono.de
+
+## Removed cat as ${data_dir}/all-train.tc.clean.mono.en provided in data but separate true cased files are not
+
+#cat ${data_dir}/*-train.tc.clean.en.mono > ${data_dir}/all-train.tc.clean.mono.en
+#cat ${data_dir}/*-train.tc.clean.de.mono > ${data_dir}/all-train.tc.clean.mono.de
 prefix=all-train.tc.clean.mono
 
 # train embeddings on all the unaligned monolingual data in two languages

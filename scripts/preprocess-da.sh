@@ -8,11 +8,13 @@ out_dir=${PWD}/outputs/
 dest_dir=$out_dir/data-bin-join/${sd}2${td}/
 mkdir -p $dest_dir
 
+## Changed tgtdict to source domain (sd) based on provided datatset
+
 fairseq-preprocess --source-lang ${sl} --target-lang $tl \
-	--trainpref $data_dir/${td}-w2w-unsup+${sd}-para.train.bpe.clean \
-	--validpref $data_dir/${td}-w2w-unsup+${sd}-para.dev.bpe \
+	--trainpref $data_dir/${td}-w2w-unsup+${sd}-para-train.bpe.clean \
+	--validpref $data_dir/${td}-w2w-unsup+${sd}-para-dev.bpe \
 	--testpref $data_dir/${td}-test.bpe \
 	--destdir $dest_dir \
 	--srcdict $out_dir/data-bin-join/${sd}/dict.${sl}.txt \
-	--tgtdict $out_dir/data-bin-join/${td}/dict.${tl}.txt
+	--tgtdict $out_dir/data-bin-join/${sd}/dict.${tl}.txt
 
