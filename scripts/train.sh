@@ -25,6 +25,5 @@ fairseq-train $data_dir \
               --max-tokens 2000 \
               --update-freq 8 \
               --max-epoch ${epoch} --save-interval 1 \
-              --fp16 \
               --save-interval-updates 5000 1> $save_dir/log 2> $save_dir/err
 

@@ -20,7 +20,7 @@ for sp in "${td}-train.bpe.clean" "${td}-dev.bpe"; do
     src_sp=${sp/$td/$sd}
     head -n $num_td ${data_dir}/${src_sp}.en > ${output_dir}/${src_sp}.en
     head -n $num_td ${data_dir}/${src_sp}.de > ${output_dir}/${src_sp}.de
-    
+
     cat $output_dir/$sp.en.mono $output_dir/$src_sp.en > $output_dir/${sp/$td/${td}-w2w-unsup+${sd}-para}.en
     cat $output_dir/$sp.de.mono $output_dir/$src_sp.de > $output_dir/${sp/$td/${td}-w2w-unsup+${sd}-para}.de
 done

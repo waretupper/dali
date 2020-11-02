@@ -2,6 +2,8 @@ export CUDA_VISIBLE_DEVICES=$1  # [GPU id]
 sup_dict_path=$2 # [path to supervised seed lexicon], e.g., "$PWD/word-align/mono.fbw.lex"
 repo=$PWD
 
+echo $1
+
 # Install MUSE
 muse=$repo/MUSE/
 muse_dict=$muse/data/crosslingual/dictionaries/de-en.0-5000.txt
